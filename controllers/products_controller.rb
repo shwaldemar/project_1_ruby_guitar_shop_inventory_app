@@ -6,36 +6,37 @@ also_reload( "../models/*" )
 
 get "/products" do # index
   @products = Product.all()
-  erb( :index )
+  erb( :"products/index" )
 end
 
 get "/products/new" do # new
-  erb( :new )
+  erb( :"products/new" )
 end
 
 get "/products/:id" do # show
-  @product = Product.find( params[:id] )
-  erb( :show )
+  @products = Product.find( params[:id].to_i )
+  binding.pry
+  erb( :"products/show" )
 end
 
 post "/products" do # create
-  @product = Product.new( params )
-  @product.save()
-  erb( :create )
+  @products = Product.new( params )
+  @products.save()
+  erb( :"products/create" )
 end
 
-get "/product/:id/edit" do # edit
-  @product = Product.find( params[:id] )
-  erb( :edit )
+get "/products/:id/edit" do # edit
+  @products = Product.find( params[:id] )
+  erb( :"/products/edit" )
 end
 
-post "/product/:id" do # update
-  Product.new( params ).update
-  redirect to "/product"
+post "/products/:id" do # update
+  Product.new( params ).update()
+  redirect to "products"
 end
 
-post "/product/:id/delete" do # delete
+post "/products/:id/delete" do # delete
   product = Product.find( params[:id] )
   product.delete()
-  redirect to "/product"
+  redirect to "/products"
 end

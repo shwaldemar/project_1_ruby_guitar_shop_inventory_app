@@ -6,36 +6,36 @@ also_reload( "../models/*" )
 
 get "/suppliers" do # index
   @suppliers = Supplier.all()
-  erb( :index )
+  erb( :"suppliers/index" )
 end
 
 get "/suppliers/new" do # new
-  erb( :new )
+  erb( :"suppliers/new" )
 end
 
 get "/suppliers/:id" do # show
   @supplier = Supplier.find( params[:id] )
-  erb( :show )
+  erb( :"suppliers/show" )
 end
 
 post "/suppliers" do # create
   @supplier = Supplier.new( params )
   @supplier.save()
-  erb( :create )
+  erb( :"suppliers/create" )
 end
 
-get "/supplier/:id/edit" do # edit
-  @supplier = Pupplier.find( params[:id] )
-  erb( :edit )
+get "/suppliers/:id/edit" do # edit
+  @supplier = Supplier.find( params[:id] )
+  erb( :"suppliers/edit" )
 end
 
-post "/supplier/:id" do # update
+post "/suppliers/:id" do # update
   Supplier.new( params ).update
-  redirect to "/supplier"
+  redirect to ("/suppliers")
 end
 
-post "/supplier/:id/delete" do # delete
+post "/suppliers/:id/delete" do # delete
   supplier = Supplier.find( params[:id] )
   supplier.delete()
-  redirect to "/supplier"
+  redirect to ("/suppliers")
 end

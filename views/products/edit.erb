@@ -1,0 +1,41 @@
+<h2>Edit<% @products.name %></h2>
+<form action="/products/<%= @products.id.to_i %>" method="post">
+
+  <div class="form-el">
+    <label for="name"> Name: </label>
+    <input
+    type="text"
+    name="name"
+    id="name"
+    value="<%= @products.name %>"
+    >
+
+    <div class="form-el">
+      <label for="model">Model:</label>
+      <input type="text" name="model" id="model" value="<%= @products.model %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="description">Description:</label>
+      <input type="text" name="description" id="description" value="<%= @products.description %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="buy_price">Wholesale Price:</label>
+      <input type="text" name="buy_price" id="buy_price" value="<%= @products.buy_price %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="sell_price">Retail Price:</label>
+      <input type="text" name="sell_price" id="sell_price" value="<%= @products.sell_price %>"/>
+    </div>
+
+    <div class="form-el">
+      <label for="quantity">Quantity:</label>
+      <input type="text" name="quantity" id="quantity" value="<%= @products.quantity %>"/>
+    </div>
+
+  </div>
+
+  <input type="submit" value="Edit product">
+</form>

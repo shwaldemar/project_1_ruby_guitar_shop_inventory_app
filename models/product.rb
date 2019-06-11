@@ -14,9 +14,9 @@ class Product
     @name = options["name"]
     @model =  options["model"]
     @description =  options["description"]
-    @buy_price = options["buy_price"]
-    @sell_price = options["sell_price"]
-    @quantity = options["quantity"]
+    @buy_price = options["buy_price"].to_i
+    @sell_price = options["sell_price"].to_i
+    @quantity = options["quantity"].to_i
     @supplier_id = options["supplier_id"]
   end
 
@@ -96,6 +96,11 @@ class Product
     values = [id]
     results = SqlRunner.run( sql, values )
     return Product.new( results.first )
+  end
+
+  def markup()
+    @markup = @sell_price - @buy_price
+    return @markup
   end
 
 end

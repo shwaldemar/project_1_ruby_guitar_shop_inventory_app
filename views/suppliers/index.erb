@@ -1,1 +1,37 @@
+<h2>Suppliers</h2>
+<hr>
 
+<nav>
+  <ul>
+    <li>
+      <a href="/suppliers">Display suppliers</a>
+    </li>
+    <li>
+      <a href="/suppliers/new">Add new supplier</a>
+    </li>
+    <li>
+      <a href="/function_to_be_written">Display supplier products</a>
+    </li>
+  </ul>
+</nav>
+
+<div id="css">
+  <% @suppliers.each do |supplier| %>
+
+  <div class="css">
+    <!-- <h3><a href="/supplier/<%= supplier.id %>"><%= supplier.name %></a></h3> -->
+    <p> Id: <%= supplier.id %> </p>
+    <p> Supplier: <%= supplier.name.capitalize %> </p>
+    <hr>
+  </div>
+
+<a href="suppliers/<%= supplier.id %>/edit ">Edit this supplier:</a>
+
+<form class="" action="suppliers/<%= supplier.id %>/delete" method="post">
+ <input type="submit" name="delete" value="Delete this supplier">
+</form>
+
+
+
+  <% end %>
+</div>

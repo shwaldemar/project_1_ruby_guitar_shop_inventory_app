@@ -1,0 +1,11 @@
+<p>You have successfully added a new product. Bully for you!</p>
+
+<!-- <p> Id: <%= @products.id %> </p> -->
+<p> Supplier: <%= @products.supplier_id %> </p>
+<p> Name: <%= @products.name %> </p>
+<p> Model: <%= @products.model %> </p>
+<p> Description: <%= @products.description %> </p>
+<p> Buy Price: <%= @products.buy_price %> </p>
+<p> Sell Price: <%= @products.sell_price %> </p>
+<p> Mark up: <%= @products.sell_price.to_i - @products.buy_price.to_i %> </p>
+<p class="quantity"> Quantity: <%= @products.quantity %></p>
