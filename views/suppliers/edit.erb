@@ -1,5 +1,5 @@
 <h2>Edit<% @supplier.name %></h2>
-<form method="post" action=/suppliers/<% @supplier.id %>
+<form method="post" action=/suppliers/<%= @supplier.id.to_i %>
 
   <div class="form-el">
     <label for="name"> Name: </label>

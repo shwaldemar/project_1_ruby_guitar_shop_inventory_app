@@ -7,3 +7,13 @@
 #green {
   color: green;
 }
+
+body {
+  background-image: url("guitar.gif");
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+h1,h2 {
+  color: silver;
+}

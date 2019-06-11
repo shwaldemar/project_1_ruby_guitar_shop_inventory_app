@@ -22,15 +22,15 @@
     <!-- <h3><a href="/supplier/<%= supplier.id %>"><%= supplier.name %></a></h3> -->
     <p> Id: <%= supplier.id %> </p>
     <p> Supplier: <%= supplier.name.capitalize %> </p>
-    <hr>
+
   </div>
 
-<a href="suppliers/<%= supplier.id %>/edit ">Edit this supplier:</a>
+  <a href="suppliers/<%= supplier.id %>/edit">Edit this supplier:</a>
 
-<form class="" action="suppliers/<%= supplier.id %>/delete" method="post">
- <input type="submit" name="delete" value="Delete this supplier">
-</form>
-
+  <form class="" action="suppliers/<%= supplier.id %>/delete" method="post">
+    <input type="submit" name="delete" value="Delete this supplier">
+  </form>
+  <hr>
 
 
   <% end %>

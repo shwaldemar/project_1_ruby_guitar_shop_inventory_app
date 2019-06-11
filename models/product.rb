@@ -84,20 +84,6 @@ class Product
     SqlRunner.run( sql, values )
   end
 
-  def low_stock()
-    sql = "SELECT * FROM products WHERE quantity < 5"
-    values = [id]
-    results = SqlRunner.run( sql, values )
-    return Product.new( results.first )
-  end
-
-  def high_stock()
-    sql = "SELECT * FROM products WHERE quantity > 10"
-    values = [id]
-    results = SqlRunner.run( sql, values )
-    return Product.new( results.first )
-  end
-
   def markup()
     @markup = @sell_price - @buy_price
     return @markup

@@ -31,7 +31,7 @@ end
 
 post "/suppliers/:id" do # update
   Supplier.new( params ).update
-  redirect to ("/suppliers")
+  redirect to "suppliers"
 end
 
 post "/suppliers/:id/delete" do # delete
