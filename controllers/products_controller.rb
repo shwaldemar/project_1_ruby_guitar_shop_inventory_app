@@ -16,7 +16,6 @@ end
 
 get "/products/:id" do # show
   @products = Product.find( params[:id].to_i )
-  binding.pry
   erb( :"products/show" )
 end
 

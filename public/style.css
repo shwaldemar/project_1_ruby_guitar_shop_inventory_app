@@ -1,3 +1,6 @@
+.flex--row {
+  flex-direction: row;
+}
 #red {
   color: red;
 }
@@ -7,13 +10,7 @@
 #green {
   color: green;
 }
-
-.flex--row {
-  flex-direction: row;
-}
-
 #content {
-  /* border-left: 1px solid white; */
   padding-left: 25px;
 }
 
@@ -51,8 +48,8 @@ p {
 }
 
 .linktitle {
-  text-align: left;
   color: #1A237E;
+  text-align: left;
 }
 
 td, th {
@@ -85,9 +82,4 @@ select {
   -webkit-appearance: none;
   border: 1px solid #9E9E9E;
   display: block;
-}
-
-:focus {
-  outline-color: transparent;
-  outline-style:  none;
 }
