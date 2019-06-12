@@ -8,29 +8,86 @@
   color: green;
 }
 
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  /* border-left: 1px solid white; */
+  padding-left: 25px;
+}
+
+main {
+  padding: 25px;
+}
+
 h1,h2,h4 {
-  color: #37474F;
+  color: #1A237E;
   font-family: "Georgia", "Verdana", "Courier", Arial;
   text-align: center;
 }
 
 body {
+  background: black url("chapman.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   background-color: white;
+
+  color: #1A237E;
   font-family: "Georgia", "Verdana", "Courier", Arial;
   font-size: 16px;
-
-  color: #37474F;
+  padding: 0px;
+  margin: 0px;
   text-align: left;
   font-weight: bold;
 }
 
 p {
-  color: #37474F;
+  color:#1A237E;
   text-align: left;
   font-weight: bold;
 }
 
 .linktitle {
   text-align: left;
-  color: #37474F;
+  color: #1A237E;
+}
+
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+  border-bottom: 1px solid #9E9E9E;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 1px solid #9E9E9E;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+}
+
+select {
+  width 150px
+  padding: 5 px 35px 5px 5px;
+  margin: 15px 0;
+  font-size: 0.8em;
+  -webkit-appearance: none;
+  border: 1px solid #9E9E9E;
+  display: block;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style:  none;
 }
