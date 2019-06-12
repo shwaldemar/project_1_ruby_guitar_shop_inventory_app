@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Simon's Guitar Emporium Stock Management System</title>
 
   <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
 <body>
-<main class="flex flex--row">
-  <h1>Simon's Guitar Emporium</h1>
-  <nav>
-    <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
-        <a href="/suppliers">Suppliers</a>
-      </li>
-      <li>
-        <a href="/products">Inventory</a>
-      </li>
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
-  </main>
-</body>
+
+
+
+
+      <h1>Simon's Guitar Emporium</h1>
+
+      <nav>
+        <ul>
+          <li>
+            <a class="linktitle" href="/">Home</a>
+          </li>
+          <li>
+            <a class="linktitle" href="/suppliers">Suppliers</a>
+          </li>
+          <li>
+            <a class="linktitle" href="/products">Inventory</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section id="content">
+        <%= yield %>
+      </section>
+
+  </body>
+
+
 </html>

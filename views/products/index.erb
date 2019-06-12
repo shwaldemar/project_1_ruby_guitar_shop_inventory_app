@@ -4,51 +4,62 @@
 <nav>
   <ul>
     <li>
-      <a href="/products">Display shop inventory</a>
+      <a class="linktitle" href="/products">Display shop inventory</a>
     </li>
     <li>
-      <a href="/products/new">Add a new stock item</a>
-    </li>
-    <li>
-      <a href="/function_to_be_written">Display products by supplier</a>
+      <a class="linktitle" href="/products/new">Add a new stock item</a>
     </li>
   </ul>
 </nav>
 
 <hr>
 
+<table>
+  <tr>
+    <th>Id:</th>
+    <th>Supplier ID:</th>
+    <th>Name:</th>
+    <th>Moel:</th>
+    <th>Description:</th>
+    <th>Buy Price:</th>
+    <th>Sell Price:</th>
+    <th>Mark up:</th>
+  </tr>
+
 <div id="">
   <% @products.each do |product| %>
 
+<tr>
+
   <div class="css">
-     <p> Id: <%= product.id %> </p>
-     <p> Supplier: <%= product.supplier_id %> </p>
-     <p> Name: <%= product.name %> </p>
-     <p> Model: <%= product.model %> </p>
-     <p> Description: <%= product.description %> </p>
-     <p> Buy Price: <%= product.buy_price %> </p>
-     <p> Sell Price: <%= product.sell_price %> </p>
-     <p> Mark up: <%= product.sell_price.to_i - product.buy_price.to_i %> </p>
-
+     <td> <%= product.id %> </td>
+     <td> <%= product.supplier_id %> </td>
+     <td> <%= product.name %> </td>
+     <td> <%= product.model %> </td>
+     <td> <%= product.description %> </td>
+     <td> <%= product.buy_price %> </td>
+     <td> <%= product.sell_price %> </td>
+     <td> <%= product.sell_price.to_i - product.buy_price.to_i %> </td>
+<td>
      <% if product.quantity.to_i < 3 %>
-       <p id="red" > Quantity: <%= product.quantity %> </p>
+       <p id="red" > <%= product.quantity %> </p>
      <% elsif product.quantity.to_i >= 3 && product.quantity.to_i < 10 %>
-       <p id="orange" >Quantity: <%= product.quantity %> </p>
+       <p id="orange" > <%= product.quantity %> </p>
      <% elsif product.quantity.to_i >= 10 %>
-       <p id="green" >Quantity: <%= product.quantity %> </p>
-
+       <p id="green" > <%= product.quantity %> </p>
+</td>
      <% end %>
-     <a href="products/<%= product.id %>/edit ">Edit this stock item:</a>
+     <td><a class="linktitle" href="products/<%= product.id %>/edit ">Edit:</a></td>
      <form class="" action="products/<%= product.id %>/delete" method="post">
-      <input type="submit" name="delete" value="Delete this stock item">
+      <td><input type="submit" name="delete" value="Delete"></td>
      </form>
+</tr>
 
 
 
 
 
 
-     <hr>
   </div>
 
   <% end %>

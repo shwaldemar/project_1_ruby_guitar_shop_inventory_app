@@ -1,37 +1,42 @@
+<div class="suppliers">
 <h2>Suppliers</h2>
 <hr>
 
 <nav>
   <ul>
     <li>
-      <a href="/suppliers">Display suppliers</a>
+      <a class="linktitle" href="/suppliers">Display suppliers</a>
     </li>
     <li>
-      <a href="/suppliers/new">Add new supplier</a>
-    </li>
-    <li>
-      <a href="/function_to_be_written">Display supplier products</a>
+      <a class="linktitle" href="/suppliers/new">Add new supplier</a>
     </li>
   </ul>
 </nav>
 
-<div id="css">
+<hr>
+
+<table>
+  <tr>
+    <th>Id:</th>
+    <th>Name:</th>
+  </tr>
+
   <% @suppliers.each do |supplier| %>
 
-  <div class="css">
     <!-- <h3><a href="/supplier/<%= supplier.id %>"><%= supplier.name %></a></h3> -->
-    <p> Id: <%= supplier.id %> </p>
-    <p> Supplier: <%= supplier.name.capitalize %> </p>
+    <tr>
+    <td> <%= supplier.id %> </td>
+    <td> <%= supplier.name.capitalize %> </td>
 
-  </div>
+  <td><a class="linktitle" href="suppliers/<%= supplier.id %>/edit">Edit this supplier:</a></td>
 
-  <a href="suppliers/<%= supplier.id %>/edit">Edit this supplier:</a>
+  <td><form class="" action="suppliers/<%= supplier.id %>/delete" method="post"></td>
+    <td><input type="submit" name="delete" value="Delete this supplier"></td>
+  </form></td></tr>
 
-  <form class="" action="suppliers/<%= supplier.id %>/delete" method="post">
-    <input type="submit" name="delete" value="Delete this supplier">
-  </form>
-  <hr>
 
 
   <% end %>
+  </table>
+
 </div>

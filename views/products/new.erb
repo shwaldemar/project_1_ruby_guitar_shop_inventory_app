@@ -32,8 +32,14 @@
       <input type="text" name="quantity" id="quantity"/>
     </div>
 
-    <div class="form-el">
-      <input type="submit" value="Add New Product To Stock Inventory"/>
+    <label for="supplier_id">Select a supplier:</label>
+    <select class="supplier_id" name="supplier_id">
+      <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <% end %>
+    </select>
+
+    <input type="submit" value="Add New Product To Stock Inventory"/>
     </div>
 
   </div>

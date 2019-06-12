@@ -10,6 +10,7 @@ get "/products" do # index
 end
 
 get "/products/new" do # new
+  @suppliers = Supplier.all()
   erb( :"products/new" )
 end
 

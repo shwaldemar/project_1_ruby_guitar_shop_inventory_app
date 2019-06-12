@@ -46,6 +46,19 @@ class Product
     return results.map { |product| Product.new( product )}
   end
 
+  # def self.all()
+  #   sql = "SELECT * FROM products"
+  #   results = SqlRunner.run( sql )
+  #   results = results.map { |product| Product.new( product )}
+  #   results = results.sort_by { |product| product.supplier_id }
+  #   return results
+  # end
+
+  def get_planet_names_sorted_by_increasing_distance_from_sun
+   planets_by_distance = @planets.sort_by{ |planet| planet.distance_from_sun }
+   return planets_by_distance.map { |planet| planet.name }
+  end
+
   def self.find( id )
     sql = "SELECT * FROM products WHERE id = $1"
     values = [id]
@@ -84,9 +97,11 @@ class Product
     SqlRunner.run( sql, values )
   end
 
-  def markup()
-    @markup = @sell_price - @buy_price
-    return @markup
-  end
+  # def supplier()
+  #   sql = "SELECT * FROM suppliers WHERE id = $1"
+  #   values = [@supplier_id]
+  #   results = SqlRunner.run( sql, values )
+  #   return results.map { |supplier| Supplier.new( supplier )}
+  # end
 
 end
