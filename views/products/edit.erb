@@ -35,6 +35,25 @@
       <input type="text" name="quantity" id="quantity" value="<%= @products.quantity %>"/>
     </div>
 
+    <div class="form-el">
+      <label for="id">Id:</label>
+      <input type="text" name="id" id="id" value="<%= @products.id %>"/>
+    </div>
+
+    <!-- <div class="form-el">
+      <label for="supplier_id">Supplier Id:</label>
+      <input type="text" name="supplier_id" id="supplier_id" value="<%= @products.supplier_id %>"/>
+    </div> -->
+
+    <label for="supplier_id">Select a supplier:</label>
+    <select class="supplier_id" name="supplier_id">
+      <% for supplier in @suppliers %>
+      <option value="<%= supplier.id %>"><%= supplier.name %></option>
+      <% end %>
+    </select>
+
+
+
   </div>
 
   <input type="submit" value="Edit product">
