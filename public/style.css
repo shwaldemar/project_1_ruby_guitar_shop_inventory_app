@@ -19,24 +19,23 @@ body {
   font-family: "Georgia", "Verdana", "Courier", Arial;
   font-size: 16px;
 
-  background-image: url("iguitar.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
   color: #37474F;
-  text-align: justify;
+  text-align: left;
   font-weight: bold;
 }
 
 p {
   color: #37474F;
-  text-align: justify;
+  text-align: left;
   font-weight: bold;
 }
 
 .linktitle {
-  text-align: justify;
+  text-align: left;
   color: #37474F;
 }
 
