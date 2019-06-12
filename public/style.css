@@ -19,10 +19,6 @@ body {
   font-family: "Georgia", "Verdana", "Courier", Arial;
   font-size: 16px;
 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
   color: #37474F;
   text-align: left;
   font-weight: bold;
@@ -38,8 +34,3 @@ p {
   text-align: left;
   color: #37474F;
 }
-
-/* .listpart {
-  color: #1A237E;
-  font-weight: 200;
-} */

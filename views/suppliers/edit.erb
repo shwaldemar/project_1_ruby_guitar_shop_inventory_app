@@ -1,18 +1,16 @@
 <h2>Edit<% @supplier.name %></h2>
 <form method="post" action=/suppliers/<%= @supplier.id.to_i %>
 
-    <label for="name"> Name: </label>
-    <input
-    type="text"
-    name="name"
-    id="name"
-    value="<%= @supplier.name %>"
-    >
+  <label for="name"> Name: </label>
+  <input
+  type="text"
+  name="name"
+  id="name"
+  value="<%= @supplier.name %>"
+  >
 
+  <!-- <p> Supplier Id: <%= @supplier.id %><p/> -->
+    <input type="hidden" name="supplier_id" id="supplier_id" value="<%= @supplier.id %>"/>
 
-
-      <p> Supplier Id: <%= @supplier.id %><p/>
-
-
-  <input type="submit" value="Edit supplier">
-</form>
+    <input type="submit" value="Edit">
+  </form>

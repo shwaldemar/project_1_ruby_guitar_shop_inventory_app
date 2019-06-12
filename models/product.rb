@@ -2,12 +2,9 @@ require_relative("../db/sql_runner.rb")
 
 class Product
 
-  attr_reader( :id, :name, :model, :description, :buy_price, :sell_price, :quantity, :supplier_id )
+  attr_accessor( :id, :name, :model, :description, :buy_price, :sell_price, :quantity, :supplier_id )
 
-  attr_writer( :id, :name, :model, :description, :buy_price, :sell_price, :quantity, :supplier_id )
-
-
-
+  # attr_writer( :id, :name, :model, :description, :buy_price, :sell_price, :quantity, :supplier_id )
 
   def initialize( options )
     @id = options["id"].to_i if options["id"]
@@ -44,19 +41,6 @@ class Product
     sql = "SELECT * FROM products"
     results = SqlRunner.run( sql )
     return results.map { |product| Product.new( product )}
-  end
-
-  # def self.all()
-  #   sql = "SELECT * FROM products"
-  #   results = SqlRunner.run( sql )
-  #   results = results.map { |product| Product.new( product )}
-  #   results = results.sort_by { |product| product.supplier_id }
-  #   return results
-  # end
-
-  def get_planet_names_sorted_by_increasing_distance_from_sun
-   planets_by_distance = @planets.sort_by{ |planet| planet.distance_from_sun }
-   return planets_by_distance.map { |planet| planet.name }
   end
 
   def self.find( id )
@@ -96,12 +80,5 @@ class Product
     values = [@name, @model, @description,  @buy_price, @sell_price, @quantity, @supplier_id, @id]
     SqlRunner.run( sql, values )
   end
-
-  # def supplier()
-  #   sql = "SELECT * FROM suppliers WHERE id = $1"
-  #   values = [@supplier_id]
-  #   results = SqlRunner.run( sql, values )
-  #   return results.map { |supplier| Supplier.new( supplier )}
-  # end
 
 end

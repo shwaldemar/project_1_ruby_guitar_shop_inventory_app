@@ -35,17 +35,12 @@
       <input type="text" name="quantity" id="quantity" value="<%= @products.quantity %>"/>
     </div>
 
-    <div class="form-el">
-      <p> Id: <%= @products.id %><p/>
-    </div>
-
-    <div class="form-el">
-      <p> Supplier Id: <%= @products.supplier_id %><p/>
-    </div>
+      <input type="hidden" name="product_id" id="product_id" value="<%= @products.id %>"/>
+    <input type="hidden" name="supplier_id" id="supplier_id" value="<%= @products.supplier_id %>"/>
 
 
 
   </div>
 
-  <input type="submit" value="Edit product">
+  <input type="submit" value="Edit">
 </form>
