@@ -1,8 +1,8 @@
 require( "sinatra" )
-require( "sinatra/contrib/all" )
+require( "sinatra/contrib/all" ) if development?
 
 require_relative( "../models/product.rb" )
-also_reload( "../models/*" )
+# also_reload( "../models/*" )
 
 get "/products" do # index
   @products = Product.all()
