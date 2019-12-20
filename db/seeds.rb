@@ -1,6 +1,5 @@
 require_relative("../models/supplier.rb")
 require_relative("../models/product.rb")
-require("pry-byebug")
 
 Product.delete_all()
 Supplier.delete_all()
@@ -449,6 +448,3 @@ product33 = Product.new({
   })
 
 product33.save()
-
-binding.pry
-nil
